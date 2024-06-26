@@ -1,10 +1,14 @@
 <template>
     <div class="home">
-        <div class="dark:bg-gray-900 h-screen content-center" >
+        <div class="dark:bg-gray-900 h-screen content-center">
             <div class="flex justify-center items-center">
                 <img  src="@/assets/img/cirion_logo.png" alt="logo cirion">
             </div>
-            <form class="max-w-sm mx-auto" v-on:submit.prevent="login" method="">
+            <form class="max-w-sm mx-auto" v-on:submit.prevent="login">
+                <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert" v-if="error">
+                    <p class="font-bold">Error en el inicio de sesión</p>
+                    <p class="text-sm">{{error_message}}</p>
+                </div>
                 <div class="mb-5">
                     <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Usuario</label>
                     <input type="text" id="username" name="username" v-model="username"
@@ -49,14 +53,16 @@ export default {
                 };
                 const response = await axios.post('/auth/login', authentication_data);
                 localStorage.setItem('jwt', response.data.token);
+                this.error = false;
+                this.$router.push('/dashboard')
             }catch (error){
                 this.error = true;
                 if (error.response){
-                    this.error_message = `Error: El inicio de sesión no pudo ser validado`;
+                    this.error_message = `El inicio de sesión no pudo ser validado`;
                 }else if (error.request) {
-                    this.error_message = "Error en la conexión de backend"
+                    this.error_message = "La conexión con el backend no se ha podido desarrollar"
                 }else{
-                    this.error_message = `Error: ${error.message}`;
+                    this.error_message = `${error.message}`;
                 }
             }
         }
