@@ -1,5 +1,6 @@
 package cmedina.cirion.tcpipstack.GlobalVariables;
 
+import cmedina.cirion.tcpipstack.UserData.Usuario;
 import cmedina.cirion.tcpipstack.UserData.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -41,6 +42,12 @@ public class AppConfig {
     public UserDetailsService userDetailService(UsuarioRepository usuarioRepository) {
         return username -> usuarioRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("El usuario no ha sido encontrado."));
+    }
+
+    @Bean
+    public UserDetailsService userRole(UsuarioRepository usuarioRepository) {
+        return username -> usuarioRepository.findByUsername(username)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
     }
 
 }

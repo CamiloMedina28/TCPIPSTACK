@@ -1,5 +1,6 @@
 package cmedina.cirion.tcpipstack.Auth;
 
+import cmedina.cirion.tcpipstack.UserData.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,4 +17,5 @@ public class RegisterRequest {
     String segundonombre;
     String primerapellido;
     String segundoapellido;
+    Role rol;
 }

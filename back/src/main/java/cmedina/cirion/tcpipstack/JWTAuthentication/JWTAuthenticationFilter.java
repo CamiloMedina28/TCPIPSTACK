@@ -23,19 +23,27 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
     private final JWTService jwtService;
     private final UserDetailsService userDetailService;
 
-
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
         final String TOKEN = getTokenFromRequest(request);
-        final String username;
+        String username = null;
+        final String rol;
 
         if (TOKEN == null) {
             filterChain.doFilter(request, response);
             return;
         }
 
-        username = jwtService.getUsernameFromToken(TOKEN);
+        try{
+            username = jwtService.getUsernameFromToken(TOKEN);
+            rol = jwtService.getRoleFromToken(TOKEN);
+            System.out.println(username);
+            System.out.println(rol);
+        }catch(Exception error){
+            System.out.println("error = " + error);
+        }
+        
 
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null){
             UserDetails userDetails = userDetailService.loadUserByUsername(username);

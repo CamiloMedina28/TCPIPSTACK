@@ -2,7 +2,7 @@
     <div class="home">
         <div class="dark:bg-gray-900 h-screen content-center">
             <div class="flex justify-center items-center">
-                <img  src="@/assets/img/cirion_logo.png" alt="logo cirion">
+                <img src="../assets/img/cirion_logo.png" alt="logo cirion">
             </div>
             <form class="max-w-sm mx-auto" v-on:submit.prevent="login">
                 <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert" v-if="error">
@@ -29,7 +29,7 @@
 
 
 <script>
-import axios from 'axios';
+import axiosInstance from '@/axios-config';
 
 export default {
     name: 'LoginView',
@@ -47,15 +47,17 @@ export default {
     methods:{
         async login(){
             try{
+                localStorage.removeItem('jwt');
                 let authentication_data = {
                 "username": this.username,
                 "password": this.password
                 };
-                const response = await axios.post('/auth/login', authentication_data);
+                const response = await axiosInstance.post('/auth/login', authentication_data);
                 localStorage.setItem('jwt', response.data.token);
                 this.error = false;
-                this.$router.push('/dashboard')
+                this.$router.push({ name : 'DashboardView'})
             }catch (error){
+                localStorage.removeItem('jwt');
                 this.error = true;
                 if (error.response){
                     this.error_message = `El inicio de sesión no pudo ser validado`;

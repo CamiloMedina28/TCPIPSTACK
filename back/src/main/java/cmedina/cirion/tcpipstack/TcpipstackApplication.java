@@ -13,10 +13,6 @@ public class TcpipstackApplication {
 		SpringApplication.run(TcpipstackApplication.class, args);
 	}
 
-	@GetMapping("/")
-	public String apiIndex(){
-		return "Hello World!";
-	}
 }
 
 

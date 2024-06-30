@@ -1,7 +1,6 @@
 package cmedina.cirion.tcpipstack.Auth;
 
 import cmedina.cirion.tcpipstack.JWTAuthentication.JWTService;
-import cmedina.cirion.tcpipstack.UserData.Role;
 import cmedina.cirion.tcpipstack.UserData.Usuario;
 import cmedina.cirion.tcpipstack.UserData.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
@@ -36,9 +35,9 @@ public class AuthService {
                 .password(passwordEncoder.encode(request.getPassword()))
                 .primernombre(request.getPrimernombre())
                 .segundonombre(request.getSegundonombre())
-                .primerapellido(request.getPrimernombre())
+                .primerapellido(request.getPrimerapellido())
                 .segundoapellido(request.getSegundoapellido())
-                .role(Role.USER).build();
+                .role(request.getRol()).build();
 
         userrepo.save(usuario);
 

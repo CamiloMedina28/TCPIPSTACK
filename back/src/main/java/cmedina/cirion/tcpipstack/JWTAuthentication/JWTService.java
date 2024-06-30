@@ -1,11 +1,11 @@
 package cmedina.cirion.tcpipstack.JWTAuthentication;
 
+import cmedina.cirion.tcpipstack.UserData.UsuarioRepository;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import io.jsonwebtoken.Claims;
-import org.springframework.core.DecoratingClassLoader;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -25,8 +25,15 @@ public class JWTService {
     }
 
     private String getNewToken(Map<String, Object> extraclaims, UserDetails usuario) {
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("role", usuario.getAuthorities().stream()
+                .map(grantedAuthority -> grantedAuthority.getAuthority())
+                .findFirst()
+                .orElse("ROLE_ADMIN"));
+        System.out.println(claims);
+
         return Jwts.builder()
-                .setClaims(extraclaims)
+                .setClaims(claims)
                 .setSubject(usuario.getUsername())
                 .issuedAt(new Date(System.currentTimeMillis()))
                 .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24))
@@ -41,6 +48,16 @@ public class JWTService {
 
     public String getUsernameFromToken(String token) {
         return getClaim(token, Claims::getSubject);
+    }
+
+    public String getRoleFromToken(String token) {
+        Claims claims = getClaimsFromToken(token);
+        System.out.println(claims);
+        return claims.get("role", String.class);
+    }
+
+    private Claims getClaimsFromToken(String token) {
+        return Jwts.parser().setSigningKey(SECRET_KEY).build().parseSignedClaims(token).getPayload();
     }
 
     public boolean isTokenValid(String token, UserDetails userDetails) {
