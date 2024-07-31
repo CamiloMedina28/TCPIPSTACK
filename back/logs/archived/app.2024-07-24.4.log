@@ -1,0 +1,72 @@
+2024-07-24 22:12:02,645 INFO c.c.t.TcpipstackApplication [restartedMain] Starting TcpipstackApplication using Java 22.0.1 with PID 27916 (F:\1. INGENIERIA DE SISTEMAS\PROGRAMACIÓN JAVA\tcpipstack\back\target\classes started by Camilo Medina in F:\1. INGENIERIA DE SISTEMAS\PROGRAMACIÓN JAVA\tcpipstack\back)
+2024-07-24 22:12:02,646 INFO c.c.t.TcpipstackApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-07-24 22:12:02,897 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-24 22:12:02,908 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 10 ms. Found 1 JPA repository interface.
+2024-07-24 22:12:03,032 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port 8080 (http)
+2024-07-24 22:12:03,032 INFO o.a.c.c.StandardService [restartedMain] Starting service [Tomcat]
+2024-07-24 22:12:03,032 INFO o.a.c.c.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-07-24 22:12:03,050 INFO o.a.c.c.C.[.[.[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-07-24 22:12:03,050 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 400 ms
+2024-07-24 22:12:03,084 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-24 22:12:03,087 INFO o.h.c.i.RegionFactoryInitiator [restartedMain] HHH000026: Second-level cache disabled
+2024-07-24 22:12:03,096 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-24 22:12:03,097 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-3 - Starting...
+2024-07-24 22:12:03,115 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1fa7c7da
+2024-07-24 22:12:03,115 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-3 - Start completed.
+2024-07-24 22:12:03,278 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-24 22:12:03,317 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-24 22:12:03,405 INFO o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer [restartedMain] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-24 22:12:03,407 WARN o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer [restartedMain] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-24 22:12:03,425 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-24 22:12:03,505 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4f4a5140, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7edf053, org.springframework.security.web.context.SecurityContextHolderFilter@39cc7e29, org.springframework.security.web.header.HeaderWriterFilter@111a26b3, org.springframework.web.filter.CorsFilter@f7bc55b, org.springframework.security.web.authentication.logout.LogoutFilter@59123fad, cmedina.cirion.tcpipstack.JWTAuthentication.JWTAuthenticationFilter@30d4b9f6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7a91b60f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a7e2850, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@70e49ef0, org.springframework.security.web.session.SessionManagementFilter@527d69ea, org.springframework.security.web.access.ExceptionTranslationFilter@6614b15e, org.springframework.security.web.access.intercept.AuthorizationFilter@65b35a6e]
+2024-07-24 22:12:03,582 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-07-24 22:12:03,597 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port 8080 (http) with context path '/'
+2024-07-24 22:12:03,601 INFO c.c.t.TcpipstackApplication [restartedMain] Started TcpipstackApplication in 0.991 seconds (process running for 47.332)
+2024-07-24 22:12:03,604 INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' securityFilterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) found beans named springSecurityFilterChain (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+
+   UserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManager and found beans of type 'org.springframework.security.core.userdetails.UserDetailsService' userDetailService, userRole and found beans of type 'org.springframework.security.authentication.AuthenticationProvider' authenticationProvider (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+         - AnyNestedCondition 3 matched 0 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) matched; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) matched; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+

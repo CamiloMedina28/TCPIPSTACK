@@ -17,10 +17,7 @@ public class FileUploadController {
 
     @PostMapping("uploader")
     public ResponseEntity<Map<String, String>> InterfacesFile(@RequestParam("file") MultipartFile file){
-        String fileName = file.getOriginalFilename();
-        System.out.println("fileName = " + fileName);
         Map data = fileUploadService.getData(file);
-        System.out.println("data = " + data);
         return ResponseEntity.status(HttpStatus.OK).body(data);
     }
 }

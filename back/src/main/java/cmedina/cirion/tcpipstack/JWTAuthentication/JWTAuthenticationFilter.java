@@ -1,11 +1,13 @@
 package cmedina.cirion.tcpipstack.JWTAuthentication;
 
+import cmedina.cirion.tcpipstack.GlobalVariables.LoggerGen;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,9 +24,13 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
 
     private final JWTService jwtService;
     private final UserDetailsService userDetailService;
+    @Autowired
+    private final LoggerGen loggerinfo;
+
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+        Logger log = loggerinfo.getLoggergenerator();
 
         final String TOKEN = getTokenFromRequest(request);
         String username = null;
@@ -40,10 +46,11 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
             rol = jwtService.getRoleFromToken(TOKEN);
             System.out.println(username);
             System.out.println(rol);
+            log.info("The user: " + username + " has role: " + rol + " has validated a JWT Token and the token is: " + TOKEN);
         }catch(Exception error){
             System.out.println("error = " + error);
         }
-        
+
 
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null){
             UserDetails userDetails = userDetailService.loadUserByUsername(username);

@@ -4,6 +4,9 @@ import DashboardView from '../views/Dashboard.vue'
 import DevOpsView from '../views/DevOps.vue'
 import NetworkingView from '../views/Networking.vue'
 import Redes1View from '../views/Redes1.vue'
+import Tickets from '@/views/Tickets.vue'
+import CrearTicket from '@/views/CrearTicket.vue'
+import EncargadoCreador from '@/views/EncargadoCreador.vue'
 
 const routes = [
     {
@@ -33,6 +36,24 @@ const routes = [
         path: '/redes-1',
         name: 'Redes1View',
         component: Redes1View,
+        meta: {requiresAuth: true}
+    },
+    {
+        path: '/gestion-tickets',
+        name: 'GestionTickets',
+        component: Tickets,
+        meta: {requiresAuth: true}
+    },
+    {
+        path: '/crear-ticket',
+        name: 'CrearTicket',
+        component: CrearTicket,
+        meta: {requiresAuth: true}
+    },
+    {
+        path: '/crear-encargado',
+        name: 'EncargadoCreate',
+        component: EncargadoCreador,
         meta: {requiresAuth: true}
     }
 ]

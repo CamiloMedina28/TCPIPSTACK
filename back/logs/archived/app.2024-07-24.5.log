@@ -1,0 +1,30 @@
+2024-07-24 22:29:54,233 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-24 22:29:56,963 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-3 - Shutdown initiated...
+2024-07-24 22:29:56,974 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-3 - Shutdown completed.
+2024-07-24 22:30:01,225 INFO c.c.t.TcpipstackApplication [restartedMain] Starting TcpipstackApplication using Java 22.0.1 with PID 32012 (F:\1. INGENIERIA DE SISTEMAS\PROGRAMACIÓN JAVA\tcpipstack\back\target\classes started by Camilo Medina in F:\1. INGENIERIA DE SISTEMAS\PROGRAMACIÓN JAVA\tcpipstack\back)
+2024-07-24 22:30:01,228 INFO c.c.t.TcpipstackApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-07-24 22:30:01,335 INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-24 22:30:01,337 INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-24 22:30:02,426 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-24 22:30:02,534 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 96 ms. Found 1 JPA repository interface.
+2024-07-24 22:30:03,495 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port 8080 (http)
+2024-07-24 22:30:03,511 INFO o.a.c.c.StandardService [restartedMain] Starting service [Tomcat]
+2024-07-24 22:30:03,511 INFO o.a.c.c.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-07-24 22:30:03,554 INFO o.a.c.c.C.[.[.[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-07-24 22:30:03,554 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2216 ms
+2024-07-24 22:30:03,695 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-24 22:30:03,801 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-24 22:30:03,850 INFO o.h.c.i.RegionFactoryInitiator [restartedMain] HHH000026: Second-level cache disabled
+2024-07-24 22:30:04,230 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-24 22:30:04,263 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-07-24 22:30:04,644 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5247d311
+2024-07-24 22:30:04,645 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-07-24 22:30:06,083 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-24 22:30:06,169 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-24 22:30:06,531 INFO o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer [restartedMain] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-24 22:30:06,533 WARN o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer [restartedMain] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-24 22:30:06,563 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-24 22:30:06,835 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1347991, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2a47b338, org.springframework.security.web.context.SecurityContextHolderFilter@673bf00b, org.springframework.security.web.header.HeaderWriterFilter@1ca5959, org.springframework.web.filter.CorsFilter@678a2cf4, org.springframework.security.web.authentication.logout.LogoutFilter@68a9de35, cmedina.cirion.tcpipstack.JWTAuthentication.JWTAuthenticationFilter@53da992b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1ffaf250, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@34a97ba7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@60ac463a, org.springframework.security.web.session.SessionManagementFilter@576b0f88, org.springframework.security.web.access.ExceptionTranslationFilter@759477e2, org.springframework.security.web.access.intercept.AuthorizationFilter@6c08ea0d]
+2024-07-24 22:30:07,128 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-07-24 22:30:07,202 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port 8080 (http) with context path '/'
+2024-07-24 22:30:07,214 INFO c.c.t.TcpipstackApplication [restartedMain] Started TcpipstackApplication in 6.616 seconds (process running for 8.12)

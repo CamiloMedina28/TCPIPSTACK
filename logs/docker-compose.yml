@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  loki:
+    image: grafana/loki:2.9.0
+    ports:
+      - "3101:3100"
+    volumes:
+      - ./logs/custom-config.yaml:/etc/loki/local-config.yaml
+      - loki_data:/loki
+    command: -config.file=/etc/loki/local-config.yaml
+    networks:
+      - logs_loki
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3002:3000"
+    networks:
+      - logs_loki
+
+volumes:
+  loki_data:  # Define a persistent volume for Loki data
+
+networks:
+  logs_loki:
+    driver: bridge
